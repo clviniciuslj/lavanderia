@@ -732,8 +732,19 @@ a { text-decoration: none; color: inherit; }
 }
 
 @media (max-width: 560px) {
-  .carousel-slide { flex-basis: 92%; margin: 0 6px; }
+  .carousel-slide { flex-basis: 96%; margin: 0 4px; aspect-ratio: 3 / 2; }
   .carousel-arrow { width: 32px; height: 32px; font-size: 1.3rem; }
+
+  #carousel .carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+  }
+
+  #carousel .carousel-prev { left: 6px; }
+  #carousel .carousel-next { right: 6px; }
+  #carousel .carousel-viewport { width: 100%; }
 }
 
 @media (max-width: 768px) {
