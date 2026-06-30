@@ -30,7 +30,7 @@
       <a href="#contato">Contato</a>
     </nav>
     <div class="header-actions">
-      <a class="btn btn-whatsapp btn-small" href="https://wa.me/5524337133199" target="_blank" rel="noopener">
+      <a class="btn btn-whatsapp btn-small" href="https://wa.me/552433713199" target="_blank" rel="noopener">
         WhatsApp
       </a>
       <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
@@ -46,7 +46,7 @@
     <h1 class="reveal">Roupas lavadas com amor,<br> pessoas vestidas de carinho.</h1>
     <p class="hero-sub reveal">A Lave-Bem cuida das suas roupas e da sua roupa de cama, mesa e banho com todo o carinho que você merece — em Paraty-RJ.</p>
     <div class="hero-actions reveal">
-      <a class="btn btn-whatsapp" href="https://wa.me/5524337133199" target="_blank" rel="noopener">
+      <a class="btn btn-whatsapp" href="https://wa.me/552433713199" target="_blank" rel="noopener">
         Falar no WhatsApp
       </a>
       <a class="btn btn-outline" href="#servicos">Ver serviços</a>
@@ -63,23 +63,42 @@
 <section class="clients" id="atendemos">
   <div class="container">
     <p class="clients-title">Atendemos</p>
-    <div class="clients-grid">
-      <div class="client-photo reveal">
-        <img src="pousada.jpg" alt="Atendimento para pousadas">
-        <div class="client-photo-label">Pousadas</div>
+    <div class="carousel" id="carousel">
+      <button class="carousel-arrow carousel-prev" id="carouselPrev" aria-label="Anterior">‹</button>
+      <div class="carousel-viewport">
+        <div class="carousel-track" id="carouselTrack">
+          <div class="carousel-slide">
+            <img src="pousada.jpg" alt="Atendimento para pousadas">
+            <div class="carousel-caption">
+              <h3>Pousadas</h3>
+              <p>Rotina de lavagem ágil para manter sua pousada sempre pronta para hóspedes.</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="residencia.jpg" alt="Atendimento para residências">
+            <div class="carousel-caption">
+              <h3>Residências</h3>
+              <p>Cuidado e agilidade para o dia a dia da sua casa.</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="embarcaçao.jpg" alt="Atendimento para embarcações">
+            <div class="carousel-caption">
+              <h3>Embarcações</h3>
+              <p>Cuidado especial com roupas e enxovais de barcos e veleiros.</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="restaurante.jpg" alt="Atendimento para restaurantes">
+            <div class="carousel-caption">
+              <h3>Restaurantes</h3>
+              <p>Toalhas, panos e uniformes higienizados com agilidade.</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="client-photo reveal">
-        <img src="residencia.jpg" alt="Atendimento para residências">
-        <div class="client-photo-label">Residências</div>
-      </div>
-      <div class="client-photo reveal">
-        <img src="embarcaçao.jpg" alt="Atendimento para embarcações">
-        <div class="client-photo-label">Embarcações</div>
-      </div>
-      <div class="client-photo reveal">
-        <img src="restaurante.jpg" alt="Atendimento para restaurantes">
-        <div class="client-photo-label">Restaurantes</div>
-      </div>
+      <button class="carousel-arrow carousel-next" id="carouselNext" aria-label="Próximo">›</button>
+      <div class="carousel-dots" id="carouselDots"></div>
     </div>
   </div>
 </section>
@@ -128,26 +147,6 @@
         <h3>Roupa de cama, mesa e banho</h3>
         <p>Lençóis, toalhas e enxovais sempre limpos e bem cuidados.</p>
       </div>
-      <div class="card reveal">
-        <span class="card-icon">🧺</span>
-        <h3>Atendimento para pousadas</h3>
-        <p>Rotina de lavagem ágil para manter sua pousada sempre pronta para hóspedes.</p>
-      </div>
-      <div class="card reveal">
-        <span class="card-icon">⚓</span>
-        <h3>Atendimento para embarcações</h3>
-        <p>Cuidado especial com roupas e enxovais de barcos e veleiros.</p>
-      </div>
-      <div class="card reveal">
-        <span class="card-icon">🍴</span>
-        <h3>Atendimento para restaurantes</h3>
-        <p>Toalhas, panos e uniformes higienizados com agilidade.</p>
-      </div>
-      <div class="card reveal">
-        <span class="card-icon">🚚</span>
-        <h3>Coleta e entrega</h3>
-        <p>Praticidade para você: combine a coleta e entrega direto pelo WhatsApp.</p>
-      </div>
     </div>
   </div>
 </section>
@@ -165,7 +164,7 @@
           <li>Ideal para residências</li>
           <li>Entrega em até 48h</li>
         </ul>
-        <a class="btn btn-outline btn-small" href="https://wa.me/5524337133199" target="_blank" rel="noopener">Pedir orçamento</a>
+        <a class="btn btn-outline btn-small" href="https://wa.me/552433713199" target="_blank" rel="noopener">Pedir orçamento</a>
       </div>
       <div class="preco-card preco-destaque reveal">
         <span class="preco-tag">Mais procurado</span>
@@ -176,7 +175,7 @@
           <li>Coleta e entrega inclusas</li>
           <li>Prioridade nos prazos</li>
         </ul>
-        <a class="btn btn-whatsapp btn-small" href="https://wa.me/5524337133199" target="_blank" rel="noopener">Pedir orçamento</a>
+        <a class="btn btn-whatsapp btn-small" href="https://wa.me/552433713199" target="_blank" rel="noopener">Pedir orçamento</a>
       </div>
       <div class="preco-card reveal">
         <h3>Embarcações</h3>
@@ -186,7 +185,7 @@
           <li>Coleta na marina/porto</li>
           <li>Flexibilidade de horários</li>
         </ul>
-        <a class="btn btn-outline btn-small" href="https://wa.me/5524337133199" target="_blank" rel="noopener">Pedir orçamento</a>
+        <a class="btn btn-outline btn-small" href="https://wa.me/552433713199" target="_blank" rel="noopener">Pedir orçamento</a>
       </div>
     </div>
   </div>
@@ -273,7 +272,7 @@
     <p class="section-sub reveal">Fale com a gente e peça um orçamento sem compromisso.</p>
     <div class="contato-layout">
       <div class="contato-grid">
-        <a class="contato-item reveal" href="https://wa.me/5524337133199" target="_blank" rel="noopener">
+        <a class="contato-item reveal" href="https://wa.me/552433713199" target="_blank" rel="noopener">
           <span class="contato-icon">📱</span>
           <div>
             <strong>WhatsApp / Telefone</strong>
@@ -315,7 +314,7 @@
   </div>
 </section>
 
-<a class="whatsapp-float" href="https://wa.me/5524337133199" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+<a class="whatsapp-float" href="https://wa.me/552433713199" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
   💬
 </a>
 
