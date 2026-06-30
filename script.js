@@ -125,8 +125,67 @@ carousel.addEventListener('mouseenter', stopAutoplay);
 carousel.addEventListener('mouseleave', startAutoplay);
 window.addEventListener('resize', () => render(false));
 
+// Arrastar/deslizar (swipe) no carrossel de fotos
+const viewport = track.parentElement;
+let dragging = false;
+let dragStartX = 0;
+let dragBaseX = 0;
+
+function currentTranslateX() {
+  const matrix = new DOMMatrixReadOnly(window.getComputedStyle(track).transform);
+  return matrix.m41;
+}
+
+viewport.addEventListener('pointerdown', (e) => {
+  dragging = true;
+  dragStartX = e.clientX;
+  dragBaseX = currentTranslateX();
+  stopAutoplay();
+  track.style.transition = 'none';
+  track.classList.add('is-dragging');
+  viewport.setPointerCapture(e.pointerId);
+});
+
+viewport.addEventListener('pointermove', (e) => {
+  if (!dragging) return;
+  const delta = e.clientX - dragStartX;
+  track.style.transform = `translateX(${dragBaseX + delta}px)`;
+});
+
+function endDrag(e) {
+  if (!dragging) return;
+  dragging = false;
+  track.classList.remove('is-dragging');
+  const delta = e.clientX - dragStartX;
+  if (Math.abs(delta) > 40) {
+    delta < 0 ? next() : prev();
+  } else {
+    render(true);
+  }
+  startAutoplay();
+}
+
+viewport.addEventListener('pointerup', endDrag);
+viewport.addEventListener('pointercancel', endDrag);
+
 render(false);
 startAutoplay();
+
+// Carrosséis de cards (Diferenciais e Preços) com setas + arraste nativo
+document.querySelectorAll('.carousel-cards').forEach((el) => {
+  const scrollTrack = el.querySelector('.carousel-track-scroll');
+  const prev = el.querySelector('.carousel-prev');
+  const next = el.querySelector('.carousel-next');
+
+  function scrollAmount() {
+    const card = scrollTrack.firstElementChild;
+    const gap = parseFloat(window.getComputedStyle(scrollTrack).gap) || 20;
+    return card.getBoundingClientRect().width + gap;
+  }
+
+  prev.addEventListener('click', () => scrollTrack.scrollBy({ left: -scrollAmount(), behavior: 'smooth' }));
+  next.addEventListener('click', () => scrollTrack.scrollBy({ left: scrollAmount(), behavior: 'smooth' }));
+});
 
 // Formulário -> WhatsApp
 const contatoForm = document.getElementById('contatoForm');
