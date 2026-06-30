@@ -32,10 +32,7 @@ document.querySelectorAll('.faq-item').forEach(item => {
 const revealEls = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('in-view');
-      observer.unobserve(entry.target);
-    }
+    entry.target.classList.toggle('in-view', entry.isIntersecting);
   });
 }, { threshold: 0.15 });
 

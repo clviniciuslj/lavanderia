@@ -48,6 +48,19 @@ a { text-decoration: none; color: inherit; }
   transform: translateY(0);
 }
 
+/* Staggered reveal for card grids/lists */
+.dif-card:nth-child(2), .preco-card:nth-child(2), .depo-card:nth-child(2),
+.faq-item:nth-child(2), .highlight-item:nth-child(2) { transition-delay: 0.08s; }
+
+.dif-card:nth-child(3), .preco-card:nth-child(3), .depo-card:nth-child(3),
+.faq-item:nth-child(3), .highlight-item:nth-child(3) { transition-delay: 0.16s; }
+
+.dif-card:nth-child(4), .faq-item:nth-child(4) { transition-delay: 0.24s; }
+
+.dif-card:nth-child(5) { transition-delay: 0.32s; }
+
+.dif-card:nth-child(6) { transition-delay: 0.4s; }
+
 /* Floating bubbles background */
 .bubbles-bg {
   position: fixed;
@@ -224,6 +237,29 @@ a { text-decoration: none; color: inherit; }
   flex-wrap: wrap;
 }
 
+/* Highlights */
+.highlights { padding: 36px 0; background: var(--azul-claro); }
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--branco);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: 0 4px 14px rgba(19,74,114,0.06);
+}
+
+.highlight-icon { font-size: 1.6rem; flex-shrink: 0; }
+
+.highlight-item p { color: var(--texto); font-size: 0.95rem; margin: 0; }
+
 /* Clients */
 .clients {
   padding: 20px 0 48px;
@@ -240,8 +276,12 @@ a { text-decoration: none; color: inherit; }
   letter-spacing: 2px;
   font-size: 0.85rem;
   opacity: 0.8;
-  margin-bottom: 24px;
+  margin-bottom: 10px;
 }
+
+.clients h2 { color: var(--branco); }
+
+.clients .section-sub { color: rgba(255,255,255,0.85); }
 
 /* Carousel */
 .carousel {
@@ -291,7 +331,10 @@ a { text-decoration: none; color: inherit; }
   -webkit-user-drag: none;
   user-select: none;
   pointer-events: none;
+  transition: transform 0.5s ease;
 }
+
+.carousel-slide:hover img { transform: scale(1.06); }
 
 .carousel-caption {
   position: absolute;
@@ -376,12 +419,10 @@ a { text-decoration: none; color: inherit; }
   scroll-behavior: smooth;
   padding: 6px 4px 14px;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(30,111,168,0.3) transparent;
+  scrollbar-width: none;
 }
 
-.carousel-track-scroll::-webkit-scrollbar { height: 6px; }
-.carousel-track-scroll::-webkit-scrollbar-thumb { background: rgba(30,111,168,0.25); border-radius: 4px; }
+.carousel-track-scroll::-webkit-scrollbar { display: none; }
 
 .carousel-slide-card {
   flex: 0 0 300px;
@@ -406,11 +447,11 @@ a { text-decoration: none; color: inherit; }
   text-align: center;
   color: var(--cinza);
   max-width: 560px;
-  margin: 12px auto 40px;
+  margin: 10px auto 28px;
 }
 
 /* Diferenciais */
-.diferenciais { padding: 80px 0; background: var(--branco); }
+.diferenciais { padding: 56px 0; background: var(--branco); }
 
 .dif-card {
   text-align: center;
@@ -436,7 +477,7 @@ a { text-decoration: none; color: inherit; }
 .dif-card p { color: var(--cinza); font-size: 0.92rem; }
 
 /* Precos */
-.precos { padding: 80px 0; background: var(--branco); }
+.precos { padding: 56px 0; background: var(--branco); }
 
 .preco-card {
   position: relative;
@@ -499,7 +540,7 @@ a { text-decoration: none; color: inherit; }
 .sobre {
   background: linear-gradient(135deg, var(--azul-escuro), #0e3a5a);
   color: var(--branco);
-  padding: 70px 0;
+  padding: 52px 0;
 }
 
 .sobre h2 { color: var(--branco); }
@@ -517,7 +558,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* Depoimentos */
-.depoimentos { padding: 80px 0; background: var(--azul-claro); }
+.depoimentos { padding: 56px 0; background: var(--azul-claro); }
 
 .depo-grid {
   display: grid;
@@ -548,7 +589,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* FAQ */
-.faq { padding: 80px 0; background: var(--branco); }
+.faq { padding: 56px 0; background: var(--branco); }
 
 .faq-list {
   max-width: 720px;
@@ -602,7 +643,7 @@ a { text-decoration: none; color: inherit; }
 .faq-answer p { color: var(--cinza); font-size: 0.95rem; }
 
 /* Contato */
-.contato { padding: 80px 0; background: var(--azul-claro); }
+.contato { padding: 56px 0; background: var(--azul-claro); }
 
 .contato-layout {
   display: grid;
@@ -729,6 +770,10 @@ a { text-decoration: none; color: inherit; }
   .contato-layout { grid-template-columns: 1fr; }
   .mapa-wrap { min-height: 280px; }
   .carousel-slide { flex-basis: 80%; }
+
+  .diferenciais, .precos, .depoimentos, .faq, .contato { padding: 44px 0; }
+  .sobre { padding: 40px 0; }
+  .section-sub { margin: 8px auto 22px; }
 }
 
 @media (max-width: 560px) {
