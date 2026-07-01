@@ -49,17 +49,13 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* Staggered reveal for card grids/lists */
-.dif-card:nth-child(2), .preco-card:nth-child(2), .depo-card:nth-child(2),
+.dif-card:nth-child(2), .preco-card:nth-child(2),
 .faq-item:nth-child(2), .highlight-item:nth-child(2) { transition-delay: 0.08s; }
 
-.dif-card:nth-child(3), .preco-card:nth-child(3), .depo-card:nth-child(3),
+.dif-card:nth-child(3), .preco-card:nth-child(3),
 .faq-item:nth-child(3), .highlight-item:nth-child(3) { transition-delay: 0.16s; }
 
 .dif-card:nth-child(4), .faq-item:nth-child(4) { transition-delay: 0.24s; }
-
-.dif-card:nth-child(5) { transition-delay: 0.32s; }
-
-.dif-card:nth-child(6) { transition-delay: 0.4s; }
 
 /* Floating bubbles background */
 .bubbles-bg {
@@ -437,7 +433,7 @@ a { text-decoration: none; color: inherit; }
 
 /* Section heading shared */
 .diferenciais h2, .precos h2, .sobre h2,
-.depoimentos h2, .faq h2, .contato h2 {
+.faq h2, .contato h2 {
   text-align: center;
   font-size: 2rem;
   color: var(--azul-escuro);
@@ -555,37 +551,6 @@ a { text-decoration: none; color: inherit; }
   font-style: italic;
   font-size: 1.2rem;
   font-weight: 600;
-}
-
-/* Depoimentos */
-.depoimentos { padding: 56px 0; background: var(--azul-claro); }
-
-.depo-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-}
-
-.depo-card {
-  background: var(--branco);
-  border-radius: var(--radius);
-  padding: 28px;
-  box-shadow: 0 4px 14px rgba(19,74,114,0.06);
-  position: relative;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.depo-card:hover { transform: translateY(-6px); box-shadow: 0 14px 28px rgba(30,111,168,0.15); }
-
-.depo-card p {
-  color: var(--texto);
-  font-style: italic;
-  margin-bottom: 16px;
-}
-
-.depo-card strong {
-  color: var(--azul);
-  font-size: 0.88rem;
 }
 
 /* FAQ */
@@ -771,7 +736,7 @@ a { text-decoration: none; color: inherit; }
   .mapa-wrap { min-height: 280px; }
   .carousel-slide { flex-basis: 80%; }
 
-  .diferenciais, .precos, .depoimentos, .faq, .contato { padding: 44px 0; }
+  .diferenciais, .precos, .faq, .contato { padding: 44px 0; }
   .sobre { padding: 40px 0; }
   .section-sub { margin: 8px auto 22px; }
 }
